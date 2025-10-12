@@ -1,0 +1,1 @@
+# ticari-bitki-haritasi-ve-hastalik-tespiti
