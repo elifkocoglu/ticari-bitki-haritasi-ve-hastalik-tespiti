@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Lavanta",
+    "regions": ["İzmir", "Isparta", "Burdur", "Balıkesir"],
+    "soil": "İyi drene, hafif alkali topraklar (pH 6.5-8.0)",
+    "fertilizer": "Düşük-orta azot, fosfor/potasyum dengeli; organik madde faydalı",
+    "watering": "Kuraklığa dayanıklı; ilk yıl düzenli, sonra seyrek derin sulama",
+    "sun": "Tam güneş (günde 6-8 saat)"
+  },
+  {
+    "name": "Safran",
+    "regions": ["Karabük", "Kastamonu"],
+    "soil": "Gevşek, kumlu-tınlı, iyi drene; ağır kil topraklardan kaçının",
+    "fertilizer": "Ana ürün sonrası düşük azot; organik gübreleme önerilir",
+    "watering": "Soğan gelişiminde kontrollü; su tutmayan ortam",
+    "sun": "Tam güneş"
+  },
+  {
+    "name": "Buğday",
+    "regions": ["Konya", "Ankara", "Eskişehir"],
+    "soil": "Orta-doku tınlı; pH 6-7.5",
+    "fertilizer": "Azot fazları (ekim ve kardeşlenme); fosfor taban gübresi",
+    "watering": "Yağışa bağlı; kritik dönemlerde destek sulama",
+    "sun": "Tam güneş"
+  },
+  {
+    "name": "Zeytin",
+    "regions": ["İzmir", "Aydın", "Muğla", "Balıkesir"],
+    "soil": "Kireçli, iyi drene; ağır taban suyu olmayan",
+    "fertilizer": "Yaprak-toprak analizine göre NPK; mikro element takibi",
+    "watering": "Yazın aralıklı derin sulama (damla önerilir)",
+    "sun": "Tam güneş"
+  }
+]
+
+
+
+
+
+

@@ -34,3 +34,24 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Firebase Kurulumu
+
+Gerekli ortam değişkenlerini `.env.local` dosyanıza ekleyin:
+
+```bash
+NEXT_PUBLIC_FIREBASE_API_KEY=YOUR_KEY
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=YOUR_DOMAIN
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=YOUR_PROJECT_ID
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=YOUR_BUCKET
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=YOUR_SENDER_ID
+NEXT_PUBLIC_FIREBASE_APP_ID=YOUR_APP_ID
+
+# NextAuth (Google opsiyonel)
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+NEXTAUTH_SECRET=devsecret-change-me
+```
+
+- Kullanıcı kayıt/giriş (Credentials) Firestore `users` koleksiyonunu kullanır.
+- Firestore boşsa, geçici olarak `data/users.json` fallback olarak denenir (taşıma için).
