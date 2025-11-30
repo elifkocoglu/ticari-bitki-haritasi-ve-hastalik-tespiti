@@ -10,11 +10,18 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
+console.log("Firebase Config Check:", {
+  apiKeyPresent: !!process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID
+});
+
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
+export const storage = getStorage(app);
 export const googleProvider = new GoogleAuthProvider();
 
 

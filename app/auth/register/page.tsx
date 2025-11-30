@@ -48,7 +48,7 @@ export default function RegisterPage() {
       // 3. Save additional user data to Firestore
       console.log("Saving to Firestore...");
       try {
-        const saveToFirestore = setDoc(doc(db, "users", user.uid), {
+        const saveToFirestore = setDoc(doc(db, "users", email), {
           name: name,
           email: email,
           createdAt: new Date().toISOString(),

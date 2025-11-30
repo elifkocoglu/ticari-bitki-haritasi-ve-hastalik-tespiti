@@ -90,6 +90,115 @@ export const provincesData: Record<string, ProvinceAgriData> = {
         },
         climate: "Karasal iklim; yazlar çok sıcak ve kurak, kışlar ılık.",
         soil: "Kireçli, killi, verimli Harran ovası toprakları."
+    },
+    // Ege Bölgesi
+    "İzmir": {
+        id: 35,
+        name: "İzmir",
+        topProducts: ["Zeytin", "Üzüm", "İncir", "Pamuk"],
+        trendingProducts: ["Enginar", "Süs Bitkileri"],
+        mostProfitable: ["Organik Zeytinyağı", "Kuru İncir"],
+        trade: {
+            export: ["Kuru Meyve", "Zeytinyağı"],
+            import: ["Yem Hammaddeleri"]
+        },
+        climate: "Akdeniz iklimi; yazlar sıcak, kışlar ılık.",
+        soil: "Alüvyal, verimli Gediz ve Küçük Menderes havzaları."
+    },
+    "Manisa": {
+        id: 45,
+        name: "Manisa",
+        topProducts: ["Üzüm (Sultaniye)", "Zeytin", "Kiraz"],
+        trendingProducts: ["Badem", "Ceviz"],
+        mostProfitable: ["Kuru Üzüm", "Kiraz"],
+        trade: {
+            export: ["Kuru Üzüm", "Kiraz"],
+            import: ["Gübre"]
+        },
+        climate: "Akdeniz ve Karasal iklim geçişi.",
+        soil: "Gediz ovasının verimli alüvyal toprakları."
+    },
+    "Aydın": {
+        id: 9,
+        name: "Aydın",
+        topProducts: ["İncir", "Zeytin", "Pamuk", "Kestane"],
+        trendingProducts: ["Çilek", "Enginar"],
+        mostProfitable: ["Kuru İncir", "Zeytinyağı"],
+        trade: {
+            export: ["İncir", "Zeytin"],
+            import: ["Tarım Makineleri"]
+        },
+        climate: "Akdeniz iklimi; çok sıcak yazlar.",
+        soil: "Büyük Menderes ovası alüvyal toprakları."
+    },
+    // Marmara
+    "Bursa": {
+        id: 16,
+        name: "Bursa",
+        topProducts: ["Şeftali", "Zeytin", "Armut", "Domates"],
+        trendingProducts: ["Yaban Mersini", "Ahududu"],
+        mostProfitable: ["İpek Böcekçiliği", "Siyah İncir"],
+        trade: {
+            export: ["Meyve Suyu", "Dondurulmuş Gıda"],
+            import: ["Tohum"]
+        },
+        climate: "Ilıman Marmara iklimi.",
+        soil: "Verimli ova ve yamaç toprakları."
+    },
+    // Akdeniz
+    "Mersin": {
+        id: 33,
+        name: "Mersin",
+        topProducts: ["Muz", "Çilek", "Limon", "Narenciye"],
+        trendingProducts: ["Avokado", "Ejder Meyvesi"],
+        mostProfitable: ["Muz", "Çilek"],
+        trade: {
+            export: ["Narenciye", "Bakliyat"],
+            import: ["Tropikal Meyveler"]
+        },
+        climate: "Akdeniz iklimi; mikroklima alanları.",
+        soil: "Alüvyal kıyı ovaları."
+    },
+    // Güneydoğu
+    "Gaziantep": {
+        id: 27,
+        name: "Gaziantep",
+        topProducts: ["Antep Fıstığı", "Zeytin", "Üzüm"],
+        trendingProducts: ["Sarımsak", "Badem"],
+        mostProfitable: ["Antep Fıstığı", "Kırmızı Biber"],
+        trade: {
+            export: ["Antep Fıstığı", "Makarna"],
+            import: ["Buğday"]
+        },
+        climate: "Akdeniz ve Karasal iklim geçişi.",
+        soil: "Kireçli, kırmızı topraklar."
+    },
+    "Diyarbakır": {
+        id: 21,
+        name: "Diyarbakır",
+        topProducts: ["Buğday", "Karpuz", "Pamuk"],
+        trendingProducts: ["Mısır", "Mercimek"],
+        mostProfitable: ["Karpuz", "Pamuk"],
+        trade: {
+            export: ["Mermer (Tarım dışı)", "Tahıl"],
+            import: ["Tohum"]
+        },
+        climate: "Sert karasal iklim; yazlar çok sıcak.",
+        soil: "Kırmızı kahverengi topraklar."
+    },
+    // Karadeniz
+    "Samsun": {
+        id: 55,
+        name: "Samsun",
+        topProducts: ["Fındık", "Çeltik (Pirinç)", "Mısır"],
+        trendingProducts: ["Kivi", "Kenevir"],
+        mostProfitable: ["Bafra Pirinci", "Fındık"],
+        trade: {
+            export: ["Fındık", "Un"],
+            import: ["Buğday"]
+        },
+        climate: "Karadeniz iklimi.",
+        soil: "Bafra ve Çarşamba ovaları alüvyal toprakları."
     }
 };
 
@@ -108,7 +217,7 @@ export function getProvinceData(query: string): ProvinceAgriData {
     // Since we don't have a full list of names here, we'll just use a generic name
     return {
         id: parseInt(query) || 0,
-        name: "Diğer İl (Veri Hazırlanıyor)",
+        name: query.charAt(0).toUpperCase() + query.slice(1) + " (Veri Hazırlanıyor)",
         topProducts: ["-", "-", "-"],
         trendingProducts: ["-"],
         mostProfitable: ["-"],

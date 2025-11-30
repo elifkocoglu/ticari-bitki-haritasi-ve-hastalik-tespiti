@@ -4,6 +4,7 @@ import { authOptions } from "../api/auth/[...nextauth]/route";
 import Link from "next/link";
 import NewsList from "../components/NewsList";
 import LogoutButton from "../components/LogoutButton";
+import HeaderProfile from "../components/HeaderProfile";
 
 export default async function AnaPage() {
   const session = await getServerSession(authOptions as any);
@@ -11,7 +12,6 @@ export default async function AnaPage() {
 
   return (
     <div className="min-h-screen w-full">
-      {/* Top Bar with Cream Background */}
       {/* Top Bar with Modern Glass Effect */}
       <div className="bg-white/80 backdrop-blur-md border-b border-zinc-200 sticky top-0 z-10 shadow-sm">
         <div className="w-full max-w-full px-6 py-4 flex items-center justify-between">
@@ -21,6 +21,7 @@ export default async function AnaPage() {
           </h1>
           <div className="flex items-center gap-4">
             <span className="text-sm text-zinc-600 hidden sm:inline">Hoş geldin, {(session as any)?.user?.name || (session as any)?.user?.email}</span>
+            <HeaderProfile />
             <LogoutButton />
           </div>
         </div>
@@ -72,5 +73,3 @@ export default async function AnaPage() {
     </div>
   );
 }
-
-

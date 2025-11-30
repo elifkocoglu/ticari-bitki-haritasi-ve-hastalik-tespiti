@@ -1,22 +1,33 @@
-import TurkeyMap from "../components/TurkeyMap";
+"use client";
+
+import dynamic from "next/dynamic";
 import Link from "next/link";
+
+const TurkeyMap = dynamic(() => import("../components/TurkeyMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[85vh] bg-zinc-100 animate-pulse rounded-xl flex items-center justify-center text-zinc-400">
+      Harita yükleniyor...
+    </div>
+  ),
+});
 
 export default function HaritaPage() {
   return (
-    <div className="min-h-screen w-full">
-      <section className="w-full max-w-full px-4 py-6">
-        {/* Back Button */}
-        <Link href="/ana" className="inline-flex items-center text-zinc-500 hover:text-primary mb-6 transition-colors group">
-          <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-          Panele Dön
-        </Link>
+    <div className="min-h-screen bg-cream">
+      <div className="max-w-[1800px] mx-auto px-4 py-8">
+        <div className="mb-6 flex items-center justify-between">
+          <div className="flex items-center gap-2 text-sm text-zinc-500">
+            <Link href="/ana" className="hover:text-primary">Ana Sayfa</Link>
+            <span>/</span>
+            <span>Ticari Harita</span>
+          </div>
+        </div>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-zinc-100 p-2 overflow-hidden">
+        <div className="bg-white p-4 rounded-2xl shadow-sm border border-zinc-200">
           <TurkeyMap />
         </div>
-      </section>
+      </div>
     </div>
   );
 }
-
-

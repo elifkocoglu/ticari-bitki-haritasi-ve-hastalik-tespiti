@@ -12,54 +12,79 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: "Dosya yüklenmedi." }, { status: 400 });
         }
 
-        if (!process.env.GEMINI_API_KEY) {
-            return NextResponse.json({
-                error: "API anahtarı eksik. Lütfen .env.local dosyasına GEMINI_API_KEY ekleyin."
-            }, { status: 500 });
+        // Prepare FormData for the external API
+        const externalFormData = new FormData();
+
+        // Convert the file to a Blob to ensure it's correctly handled by the fetch API in Node environment
+        const arrayBuffer = await file.arrayBuffer();
+        const blob = new Blob([arrayBuffer], { type: file.type });
+        externalFormData.append("file", blob, file.name);
+
+        console.log(`Forwarding file: ${file.name} (${file.type}, ${file.size} bytes) to external API...`);
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 120000); // 2 minutes timeout
+
+        try {
+            // Forward to external API
+            const response = await fetch("https://elifkocoglu-bitki-harita.hf.space/bitki-analiz", {
+                method: "POST",
+                body: externalFormData,
+                signal: controller.signal,
+                // Remove explicit Content-Type header to let fetch generate the boundary
+            });
+            clearTimeout(timeoutId);
+
+            console.log(`External API Response: ${response.status} ${response.statusText}`);
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error("External API Error Body:", errorText);
+                throw new Error(`External API Error: ${response.status} ${response.statusText}`);
+            }
+
+            const externalData = await response.json();
+            console.log("External API Success Data:", JSON.stringify(externalData).substring(0, 200) + "...");
+
+            // Developer Specs:
+            // Keys: teshis, guven, yorum
+            // Logic: If guven < 0.60, return "Tanımlanamayan Bitki"
+
+            const confidence = externalData.guven || 0;
+            const threshold = 0.60;
+
+            let mappedData;
+
+            if (confidence < threshold) {
+                mappedData = {
+                    name: "Tanımlanamayan Bitki / Kapsam Dışı",
+                    disease: "Belirsiz",
+                    treatment: "Yüklediğiniz fotoğraf sistemimizdeki bitki türleriyle eşleşmedi veya güven oranı çok düşük. Lütfen daha net bir fotoğraf yükleyiniz.",
+                    notes: `Güven Oranı: %${(confidence * 100).toFixed(1)} (Eşik: %${(threshold * 100).toFixed(0)})`
+                };
+            } else {
+                mappedData = {
+                    name: "Analiz Sonucu",
+                    disease: externalData.teshis ? externalData.teshis.replace(/_/g, " ") : "Belirsiz",
+                    treatment: externalData.yorum || "Öneri bulunamadı.",
+                    notes: `Güven Oranı: %${(confidence * 100).toFixed(1)}`
+                };
+            }
+
+            return NextResponse.json(mappedData);
+
+        } catch (fetchError: any) {
+            clearTimeout(timeoutId);
+            if (fetchError.name === 'AbortError') {
+                throw new Error("External API timed out after 2 minutes");
+            }
+            throw fetchError;
         }
 
-        const arrayBuffer = await file.arrayBuffer();
-        const buffer = Buffer.from(arrayBuffer);
-        const base64Image = buffer.toString("base64");
-
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-        const prompt = `
-      Bu bitkiyi analiz et ve aşağıdaki formatta SADECE JSON döndür. Başka hiçbir metin ekleme.
-      Eğer resimde bitki yoksa "name" alanına "Bitki tespit edilemedi" yaz.
-      
-      Format:
-      {
-        "name": "Bitki Adı",
-        "disease": "Varsa hastalık adı veya 'Hastalık belirtisi yok'",
-        "treatment": "Hastalık varsa tedavi önerisi, yoksa bakım tavsiyesi",
-        "notes": "Ek bilgiler, sulama/güneş ihtiyacı vb."
-      }
-    `;
-
-        const result = await model.generateContent([
-            prompt,
-            {
-                inlineData: {
-                    data: base64Image,
-                    mimeType: file.type,
-                },
-            },
-        ]);
-
-        const response = await result.response;
-        const text = response.text();
-
-        // Clean up markdown code blocks if present
-        const jsonStr = text.replace(/```json/g, "").replace(/```/g, "").trim();
-        const data = JSON.parse(jsonStr);
-
-        return NextResponse.json(data);
-
     } catch (error: any) {
-        console.error("API Hatası:", error);
+        console.error("API Proxy Hatası:", error);
         return NextResponse.json({
-            error: "Bir hata oluştu: " + (error.message || "Bilinmeyen hata"),
+            error: "Analiz servisine ulaşılamadı: " + (error.message || "Bilinmeyen hata"),
             details: error.toString()
         }, { status: 500 });
     }

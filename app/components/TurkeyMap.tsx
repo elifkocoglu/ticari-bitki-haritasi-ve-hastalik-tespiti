@@ -50,11 +50,10 @@ export default function TurkeyMap({ className, interactive = true }: TurkeyMapPr
               layer.on({
                 click: () => {
                   if (!interactive) return; // Disable navigation if not interactive
-                  const plateNumber = feature.id;
-                  if (plateNumber) {
-                    const formattedId = plateNumber.toString().padStart(2, '0');
-                    router.push(`/il/${formattedId}`);
-                  } else if (feature.properties?.name) {
+
+                  // GeoJSON IDs are not reliable plate numbers (e.g. Ankara is ID 7 but Plate 06)
+                  // So we use the property name which is safer.
+                  if (feature.properties?.name) {
                     router.push(`/il/${feature.properties.name}`);
                   }
                 },
