@@ -17,6 +17,9 @@ export default function Home() {
   };
 
   useEffect(() => {
+    // Wake up external server (Fire and forget)
+    fetch("https://elifkocoglu-bitki-harita.hf.space/ping", { mode: 'no-cors' }).catch(() => { });
+
     const handleScroll = () => handleRedirect();
     window.addEventListener("wheel", handleScroll);
     window.addEventListener("touchmove", handleScroll);

@@ -30,21 +30,25 @@ export default async function ProvincePage({ params }: PageProps) {
         } else {
             console.warn(`External API returned status: ${res.status}`);
         }
-    } catch (error) {
-        console.error("External API Fetch Error:", error);
+    } catch (error: any) {
+        if (error.name === 'AbortError') {
+            console.warn("External API timed out (5s limit). Using static data.");
+        } else {
+            console.error("External API Fetch Error:", error);
+        }
         // Fallback to static data is handled below automatically
     }
 
     // Merge data: Use API data if available, otherwise fallback to static or generic text
     // Developer Note: API returns { sehir: string, analiz: string }
     const displayData = {
-        name: staticData?.name || decodedId,
-        climate: staticData?.climate || "Veri alınamadı.", // API doesn't seem to return distinct climate field yet, using static
-        soil: staticData?.soil || "Veri alınamadı.",       // API doesn't seem to return distinct soil field yet, using static
-        comment: apiData?.analiz || "Yapay zeka yorumu hazırlanıyor...", // Correct key: 'analiz'
-        // Keep static data for these visual parts
+        name: apiData?.sehir || staticData?.name || decodedId,
+        climate: apiData?.iklim || staticData?.climate || "Veri alınamadı.",
+        soil: apiData?.toprak || apiData?.toprak_tipi || staticData?.soil || "Veri alınamadı.",
+        comment: apiData?.analiz || "Bu şehir için henüz yapay zeka destekli tarım analizi oluşturulmamıştır.",
+        // Keep static data for these visual parts, or try to map from API if possible
         mostProfitable: staticData?.mostProfitable || [],
-        topProducts: staticData?.topProducts || [],
+        topProducts: apiData?.tum_urunler || staticData?.topProducts || [],
         trendingProducts: staticData?.trendingProducts || [],
         trade: staticData?.trade || { export: [], import: [] }
     };

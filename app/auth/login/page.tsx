@@ -13,6 +13,9 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
+  // Debug: Check if config is loaded
+  const isConfigMissing = !process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
+
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
@@ -47,6 +50,14 @@ export default function LoginPage() {
   return (
     <div className="max-w-md mx-auto px-4 py-10">
       <h1 className="text-2xl font-semibold text-primary mb-4">Giriş yap</h1>
+
+      {isConfigMissing && (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+          <strong className="font-bold">Konfigürasyon Hatası!</strong>
+          <span className="block sm:inline"> Firebase API anahtarı bulunamadı. Lütfen .env.local dosyasını kontrol edin.</span>
+        </div>
+      )}
+
       <form onSubmit={onSubmit} className="flex flex-col gap-3">
         <input className="border p-2 rounded" placeholder="E-posta" value={email} onChange={(e) => setEmail(e.target.value)} />
         <input className="border p-2 rounded" placeholder="Şifre" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />

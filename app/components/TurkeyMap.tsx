@@ -64,6 +64,7 @@ export default function TurkeyMap({ className, interactive = true }: TurkeyMapPr
                     weight: 2,
                     color: "#2E7D32"
                   });
+                  layer.openTooltip();
                 },
                 mouseout: (e: L.LeafletMouseEvent) => {
                   const layer = e.target;
@@ -72,8 +73,18 @@ export default function TurkeyMap({ className, interactive = true }: TurkeyMapPr
                     weight: 0.8,
                     color: "#4CAF50"
                   });
+                  layer.closeTooltip();
                 }
               });
+
+              if (feature.properties?.name) {
+                layer.bindTooltip(feature.properties.name, {
+                  permanent: false,
+                  direction: "top",
+                  sticky: true,
+                  className: "bg-white px-3 py-1 rounded-lg shadow-md border border-zinc-100 text-sm font-medium text-zinc-700"
+                });
+              }
             }}
           />
         )}

@@ -51,7 +51,7 @@ export async function POST(req: Request) {
             // Logic: If guven < 0.60, return "Tanımlanamayan Bitki"
 
             const confidence = externalData.guven || 0;
-            const threshold = 0.60;
+            const threshold = 0.40; // Lowered from 0.60 to allow more results
 
             let mappedData;
 
@@ -67,7 +67,7 @@ export async function POST(req: Request) {
                     name: "Analiz Sonucu",
                     disease: externalData.teshis ? externalData.teshis.replace(/_/g, " ") : "Belirsiz",
                     treatment: externalData.yorum || "Öneri bulunamadı.",
-                    notes: `Güven Oranı: %${(confidence * 100).toFixed(1)}`
+                    notes: `Güven Oranı: %${(confidence * 100).toFixed(1)} (Eşik: %${(threshold * 100).toFixed(0)})`
                 };
             }
 
