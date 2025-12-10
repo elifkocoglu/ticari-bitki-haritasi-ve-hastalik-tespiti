@@ -14,9 +14,9 @@ const TurkeyMap = dynamic(() => import("../components/TurkeyMap"), {
 
 export default function HaritaPage() {
   return (
-    <div className="min-h-screen bg-cream">
-      <div className="max-w-[1800px] mx-auto px-4 py-8">
-        <div className="mb-6 flex items-center justify-between">
+    <div className="min-h-screen bg-transparent">
+      <div className="w-full h-full">
+        <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-2 text-sm text-zinc-500">
             <Link href="/ana" className="hover:text-primary">Ana Sayfa</Link>
             <span>/</span>
@@ -24,8 +24,9 @@ export default function HaritaPage() {
           </div>
         </div>
 
-        <div className="bg-white p-4 rounded-2xl shadow-sm border border-zinc-200">
-          <TurkeyMap />
+        <div className="bg-transparent rounded-2xl overflow-hidden">
+          {/* Increased height to 90vh and removed internal padding */}
+          <TurkeyMap className="h-[94vh] w-full" />
         </div>
       </div>
     </div>

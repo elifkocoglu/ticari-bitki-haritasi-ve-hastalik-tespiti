@@ -1,40 +1,935 @@
 [
   {
-    "name": "Lavanta",
-    "regions": ["İzmir", "Isparta", "Burdur", "Balıkesir"],
-    "soil": "İyi drene, hafif alkali topraklar (pH 6.5-8.0)",
-    "fertilizer": "Düşük-orta azot, fosfor/potasyum dengeli; organik madde faydalı",
-    "watering": "Kuraklığa dayanıklı; ilk yıl düzenli, sonra seyrek derin sulama",
-    "sun": "Tam güneş (günde 6-8 saat)"
+    "name": "Abelia (Güzellik Çalısı)",
+    "regions": [
+      "Marmara",
+      "Ege"
+    ],
+    "soil": "Süzek, humuslu",
+    "fertilizer": "NPK dengeli",
+    "watering": "Orta",
+    "sun": "Tam güneş",
+    "description": "Peyzajda sıkça kullanılan, uzun süre çiçekli kalan dayanıklı bir süs bitkisidir.",
+    "harvest": "Yaz-Sonbahar (Çiçeklenme)",
+    "pests": "Yaprak biti, Külleme"
   },
   {
     "name": "Safran",
-    "regions": ["Karabük", "Kastamonu"],
-    "soil": "Gevşek, kumlu-tınlı, iyi drene; ağır kil topraklardan kaçının",
-    "fertilizer": "Ana ürün sonrası düşük azot; organik gübreleme önerilir",
-    "watering": "Soğan gelişiminde kontrollü; su tutmayan ortam",
-    "sun": "Tam güneş"
+    "regions": [
+      "Karabük",
+      "Kastamonu"
+    ],
+    "soil": "Gevşek, kumlu-tınlı, iyi drene",
+    "fertilizer": "Organik gübreleme",
+    "watering": "Soğan gelişiminde kontrollü",
+    "sun": "Tam güneş",
+    "description": "Dünyanın en pahalı baharatı olan safran, sadece stigmaları için yetiştirilir.",
+    "harvest": "Ekim-Kasım",
+    "pests": "Soğan çürüklüğü, Kemirgenler"
   },
   {
-    "name": "Buğday",
-    "regions": ["Konya", "Ankara", "Eskişehir"],
-    "soil": "Orta-doku tınlı; pH 6-7.5",
-    "fertilizer": "Azot fazları (ekim ve kardeşlenme); fosfor taban gübresi",
-    "watering": "Yağışa bağlı; kritik dönemlerde destek sulama",
-    "sun": "Tam güneş"
+    "name": "Muz",
+    "regions": [
+      "Antalya",
+      "Mersin"
+    ],
+    "soil": "Zengin, iyi drene, humuslu",
+    "fertilizer": "Yüksek potasyum ve azot",
+    "watering": "Çok yüksek su ihtiyacı",
+    "sun": "Yarı gölge / Tam güneş",
+    "description": "Türkiye'nin en kârlı meyvelerinden biri olup, örtü altı yetiştiriciliği yaygındır.",
+    "harvest": "Yıl boyu (Hasat zamanı değişir)",
+    "pests": "Kırmızı örümcek, Nematod"
+  },
+  {
+    "name": "Avokado",
+    "regions": [
+      "Antalya",
+      "Mersin",
+      "Muğla"
+    ],
+    "soil": "Gevşek, derin, iyi havalanan",
+    "fertilizer": "Çinko katkılı NPK",
+    "watering": "Hassas; toprak nemli kalmalı",
+    "sun": "Gençken gölgeleme, erginleşince tam güneş",
+    "description": "Son yıllarda popülerliği artan, ihracat potansiyeli yüksek tropik bir meyvedir.",
+    "harvest": "Çeşide göre Eylül-Haziran arası",
+    "pests": "Kök çürüklüğü, Unlu bit"
+  },
+  {
+    "name": "Çilek",
+    "regions": [
+      "Mersin",
+      "Aydın",
+      "Bursa"
+    ],
+    "soil": "Kumlu-tınlı, süzek; pH 6.0-6.5",
+    "fertilizer": "Dikim öncesi fosfor/potasyum",
+    "watering": "Sık aralıklarla az miktar",
+    "sun": "Tam güneş",
+    "description": "Kısa sürede verime yatan ve yüksek getiri sağlayan üzümsü bir meyvedir.",
+    "harvest": "İlkbahar-Yaz",
+    "pests": "Kurşuni küf, Kırmızı örümcek"
+  },
+  {
+    "name": "Domates",
+    "regions": [
+      "Antalya",
+      "Mersin",
+      "Muğla",
+      "Bursa"
+    ],
+    "soil": "Tınlı, derin, humuslu",
+    "fertilizer": "Potasyum ağırlıklı dengeli besleme",
+    "watering": "Düzenli; meyve bağlamada stres yaşatmamalı",
+    "sun": "Tam güneş",
+    "description": "Türkiye'nin en çok üretilen ve ihraç edilen sebzesidir.",
+    "harvest": "Sera (Tüm yıl), Tarla (Yaz)",
+    "pests": "Tuta absoluta, Mildiyö"
   },
   {
     "name": "Zeytin",
-    "regions": ["İzmir", "Aydın", "Muğla", "Balıkesir"],
-    "soil": "Kireçli, iyi drene; ağır taban suyu olmayan",
-    "fertilizer": "Yaprak-toprak analizine göre NPK; mikro element takibi",
-    "watering": "Yazın aralıklı derin sulama (damla önerilir)",
-    "sun": "Tam güneş"
+    "regions": [
+      "Ege",
+      "Marmara",
+      "Akdeniz",
+      "Güneydoğu"
+    ],
+    "soil": "Kireçli, iyi drene, taşlı",
+    "fertilizer": "Azot ve Bor takviyesi",
+    "watering": "Yazın aralıklı derin sulama",
+    "sun": "Tam güneş",
+    "description": "Ölmez ağaç olarak bilinen zeytin, hem yağlık hem sofralık olarak ekonomiktir.",
+    "harvest": "Ekim-Ocak",
+    "pests": "Zeytin sineği, Zeytin güvesi"
+  },
+  {
+    "name": "Fındık",
+    "regions": [
+      "Ordu",
+      "Giresun",
+      "Trabzon",
+      "Samsun"
+    ],
+    "soil": "Humuslu, hafif asidik (pH 5-6)",
+    "fertilizer": "Azot ve kalsiyum",
+    "watering": "Doğal yağış genelde yeterli",
+    "sun": "Yarı gölge",
+    "description": "Türkiye dünya fındık üretiminin lideridir; Karadeniz ekonomisinin can damarıdır.",
+    "harvest": "Ağustos-Eylül",
+    "pests": "Fındık kurdu, Yeşil kokarca"
+  },
+  {
+    "name": "Antep Fıstığı",
+    "regions": [
+      "Gaziantep",
+      "Şanlıurfa",
+      "Siirt"
+    ],
+    "soil": "Kireçli, fakir, taşlı",
+    "fertilizer": "Potasyum ve Azot",
+    "watering": "Kuraklığa dayanıklı",
+    "sun": "Tam güneş",
+    "description": "\"Yeşil Altın\" olarak bilinir, kurak bölgelerde yüksek ekonomik değer sağlar.",
+    "harvest": "Eylül",
+    "pests": "Psillid, Dal güvesi"
+  },
+  {
+    "name": "Ceviz",
+    "regions": [
+      "Denizli",
+      "Bursa",
+      "Kahramanmaraş"
+    ],
+    "soil": "Derin, taban suyu olmayan",
+    "fertilizer": "Azot ve Potasyum",
+    "watering": "Düzenli ve derin sulama",
+    "sun": "Tam güneş",
+    "description": "Besin değeri yüksek, kerestesi değerli, uzun ömürlü bir meyve türüdür.",
+    "harvest": "Eylül sonu",
+    "pests": "Ceviz iç kurdu, Antraknoz"
+  },
+  {
+    "name": "Kiraz",
+    "regions": [
+      "İzmir",
+      "Konya",
+      "Afyon",
+      "Manisa"
+    ],
+    "soil": "Süzek, derin, havalanan",
+    "fertilizer": "Potasyum ve Kalsiyum",
+    "watering": "Meyve büyütme dönemi düzenli",
+    "sun": "Tam güneş",
+    "description": "Türk kirazı, ihracatta marka olmuş, kalitesi yüksek bir meyvedir.",
+    "harvest": "Mayıs-Haziran",
+    "pests": "Kiraz sineği, Monilya"
+  },
+  {
+    "name": "İncir",
+    "regions": [
+      "Aydın",
+      "İzmir",
+      "Bursa"
+    ],
+    "soil": "Çakıllı, kireçli, derin",
+    "fertilizer": "Azot kontrollü",
+    "watering": "Kuraklığa dayanıklı",
+    "sun": "Tam güneş",
+    "description": "Kuru incir üretiminde Türkiye dünya lideridir.",
+    "harvest": "Ağustos-Eylül",
+    "pests": "İncir sineği, Ekşilik böceği"
+  },
+  {
+    "name": "Buğday",
+    "regions": [
+      "Konya",
+      "Ankara",
+      "Trakya"
+    ],
+    "soil": "Orta-doku tınlı",
+    "fertilizer": "Taban gübresi ve Üst gübre (Azot)",
+    "watering": "Yağışa bağlı, gerekirse bahar sulaması",
+    "sun": "Tam güneş",
+    "description": "Temel besin kaynağımız olup, stratejik öneme sahip tarla bitkisidir.",
+    "harvest": "Haziran-Temmuz",
+    "pests": "Süne, Kımıl, Pas hastalıkları"
+  },
+  {
+    "name": "Mısır",
+    "regions": [
+      "Adana",
+      "Konya",
+      "Mardin"
+    ],
+    "soil": "Derin, alüvyal, zengin",
+    "fertilizer": "Yüksek Azot ve Çinko",
+    "watering": "Çok yüksek (özellikle tepe püskülünde)",
+    "sun": "Tam güneş",
+    "description": "Hem insan gıdası hem de hayvan yemi olarak kritik öneme sahiptir.",
+    "harvest": "Ağustos-Eylül",
+    "pests": "Mısır koçan kurdu, Yaprak yanıklığı"
+  },
+  {
+    "name": "Pamuk",
+    "regions": [
+      "Şanlıurfa",
+      "Aydın",
+      "Adana"
+    ],
+    "soil": "Alüvyal, derin",
+    "fertilizer": "Dengeli NPK",
+    "watering": "Düzenli sulama",
+    "sun": "Tam güneş",
+    "description": "Tekstil sanayinin hammaddesi olan \"Beyaz Altın\".",
+    "harvest": "Eylül-Ekim",
+    "pests": "Yeşilkurt, Beyaz sinek"
+  },
+  {
+    "name": "Şeker Pancarı",
+    "regions": [
+      "Konya",
+      "Yozgat",
+      "Eskişehir"
+    ],
+    "soil": "Derin, tınlı, organik maddece zengin",
+    "fertilizer": "Azot kontrolü (şeker oranı için)",
+    "watering": "Düzenli ve bol su",
+    "sun": "Tam güneş",
+    "description": "Şeker endüstrisinin temelidir ve yan ürünleri yem olarak kullanılır.",
+    "harvest": "Eylül-Ekim",
+    "pests": "Yaprak lekesi, Kök çürüklüğü"
+  },
+  {
+    "name": "Patates",
+    "regions": [
+      "Niğde",
+      "Afyon",
+      "İzmir"
+    ],
+    "soil": "Gevşek, kumlu-tınlı",
+    "fertilizer": "Yüksek Potasyum",
+    "watering": "Düzenli (yumru gelişimi için)",
+    "sun": "Tam güneş",
+    "description": "Dünyanın en önemli nişasta kaynaklarından biridir.",
+    "harvest": "Yaz-Sonbahar",
+    "pests": "Patates böceği, Mildiyö"
+  },
+  {
+    "name": "Limon",
+    "regions": [
+      "Mersin",
+      "Adana",
+      "Muğla"
+    ],
+    "soil": "Hafif, kumlu-tınlı, iyi drene",
+    "fertilizer": "Demir ve Çinko takviyesi",
+    "watering": "Düzenli yaz sulaması",
+    "sun": "Tam güneş / Rüzgarsız",
+    "description": "C vitamini deposu, mutfakların vazgeçilmezi narenciye türüdür.",
+    "harvest": "Kış (Yatak limon) / Yaz (Yediveren)",
+    "pests": "Unlu bit, Akdeniz meyve sineği"
+  },
+  {
+    "name": "Kivi",
+    "regions": [
+      "Rize",
+      "Yalova",
+      "Bursa"
+    ],
+    "soil": "Organik maddece zengin, asidik",
+    "fertilizer": "Klor içermeyen gübreler",
+    "watering": "Çok yüksek nem ve su ister",
+    "sun": "Yarı gölge",
+    "description": "Değeri yüksek, nemli iklimleri seven egzotik bir meyvedir.",
+    "harvest": "Kasım",
+    "pests": "Kök boğazı çürüklüğü"
+  },
+  {
+    "name": "Lavanta",
+    "regions": [
+      "Isparta",
+      "Burdur",
+      "Edirne"
+    ],
+    "soil": "Kireçli, süzek, fakir",
+    "fertilizer": "Gübre isteği azdır",
+    "watering": "İlk yıl düzenli, sonra susuz",
+    "sun": "Tam güneş",
+    "description": "Kozmetik ve ilaç sanayinde kullanılan değerli uçucu yağ bitkisidir.",
+    "harvest": "Temmuz",
+    "pests": "Önemli bir zararlısı yoktur"
+  },
+  {
+    "name": "Kuşkonmaz",
+    "regions": [
+      "Eskişehir",
+      "Manisa",
+      "Samsun"
+    ],
+    "soil": "Kumlu-tınlı, hafif",
+    "fertilizer": "Organik ve Potasyum",
+    "watering": "Düzenli",
+    "sun": "Tam güneş",
+    "description": "Lüks tüketim grubunda yer alan, besleyici değeri yüksek bir sebzedir.",
+    "harvest": "Nisan-Haziran",
+    "pests": "Kuşkonmaz böceği, Pas"
+  },
+  {
+    "name": "Arpa",
+    "regions": [
+      "Konya",
+      "Ankara",
+      "Şanlıurfa"
+    ],
+    "soil": "Toleransı yüksek",
+    "fertilizer": "Azot ve Fosfor",
+    "watering": "Kurağa dayanıklı",
+    "sun": "Tam güneş",
+    "description": "Hayvan yemi ve malt sanayinde (bira) kullanılır.",
+    "harvest": "Haziran",
+    "pests": "Yaprak lekesi"
+  },
+  {
+    "name": "Ayçiçeği",
+    "regions": [
+      "Trakya",
+      "Konya",
+      "Adana"
+    ],
+    "soil": "Derin tınlı",
+    "fertilizer": "Potasyum ve Bor",
+    "watering": "Tabla oluşumunda kritik",
+    "sun": "Tam güneş",
+    "description": "En önemli bitkisel yağ kaynağımızdır.",
+    "harvest": "Ağustos-Eylül",
+    "pests": "Orabanj (Canavar otu), Mildiyö"
+  },
+  {
+    "name": "Badem",
+    "regions": [
+      "Adıyaman",
+      "Muğla",
+      "Manisa"
+    ],
+    "soil": "Kireçli, taşlı",
+    "fertilizer": "Azot ve Potasyum",
+    "watering": "Kuraklığa dayanıklı ama su sever",
+    "sun": "Tam güneş",
+    "description": "Erken çiçek açmasıyla bilinen, içi lezzetli ve besleyici kuru meyvedir.",
+    "harvest": "Ağustos-Eylül",
+    "pests": "İç kurdu, Dal kanseri"
+  },
+  {
+    "name": "Karpuz",
+    "regions": [
+      "Adana",
+      "Antalya",
+      "Diyarbakır"
+    ],
+    "soil": "Kumlu, sıcak nehir kenarları",
+    "fertilizer": "Potasyum ve Güvercin gübresi",
+    "watering": "Meyve irileşme dönemi bol su",
+    "sun": "Tam güneş",
+    "description": "Yaz aylarının vazgeçilmez serinletici meyvesidir.",
+    "harvest": "Haziran-Ağustos",
+    "pests": "Fusarium, Antraknoz"
+  },
+  {
+    "name": "Kavun",
+    "regions": [
+      "Manisa",
+      "Ankara",
+      "Konya"
+    ],
+    "soil": "Killi-tınlı, su tutan",
+    "fertilizer": "Dengeli",
+    "watering": "Meyve olgunlaşırken kesilir",
+    "sun": "Tam güneş",
+    "description": "Hoş kokulu, ticari değeri yüksek bir yaz meyvesidir.",
+    "harvest": "Temmuz-Eylül",
+    "pests": "Külleme, Solgunluk"
+  },
+  {
+    "name": "Salatalık",
+    "regions": [
+      "Antalya",
+      "Mersin",
+      "İzmir"
+    ],
+    "soil": "Tuzsuz, humuslu",
+    "fertilizer": "Azot (hızlı gelişim)",
+    "watering": "Çok yüksek ve sık",
+    "sun": "Tam güneş",
+    "description": "Sofraların ve turşu sanayinin temel sebzesidir.",
+    "harvest": "Hasat aralığı çok sıktır (günlük)",
+    "pests": "Mildiyö, Kırmızı örümcek"
+  },
+  {
+    "name": "Biber",
+    "regions": [
+      "Antalya",
+      "Mersin",
+      "Bursa"
+    ],
+    "soil": "Sıcak tınlı toprak",
+    "fertilizer": "Kalsiyum ve Potasyum",
+    "watering": "Düzenli",
+    "sun": "Tam güneş",
+    "description": "Salçalık, dolmalık ve sofralık birçok çeşidi vardır.",
+    "harvest": "Yaz-Sonbahar",
+    "pests": "Biber kurdu, Trips"
+  },
+  {
+    "name": "Patlıcan",
+    "regions": [
+      "Antalya",
+      "Mersin",
+      "Şanlıurfa"
+    ],
+    "soil": "Derin, geçirgen, sıcak",
+    "fertilizer": "Azot ve Potasyum",
+    "watering": "Bol su ister",
+    "sun": "Tam güneş",
+    "description": "Türk mutfağının en çok kullanılan sebzelerinden biridir.",
+    "harvest": "Yaz boyunca",
+    "pests": "Kırmızı örümcek, Beyaz sinek"
+  },
+  {
+    "name": "Sarımsak",
+    "regions": [
+      "Kastamonu",
+      "Gaziantep"
+    ],
+    "soil": "Kumlu-tınlı, kükürtlü",
+    "fertilizer": "Kükürtlü gübreler",
+    "watering": "Baş bağlamada kritik",
+    "sun": "Tam güneş",
+    "description": "Doğal antibiyotik olarak bilinen, Taşköprü sarımsağı dünyaca ünlüdür.",
+    "harvest": "Temmuz",
+    "pests": "Pas, Sarımsak sineği"
+  },
+  {
+    "name": "Soğan",
+    "regions": [
+      "Ankara",
+      "Amasya",
+      "Bursa"
+    ],
+    "soil": "Hafif bünyeli, taşsız",
+    "fertilizer": "Fosfor",
+    "watering": "Düzenli, hasat öncesi kes",
+    "sun": "Tam güneş",
+    "description": "Her yemeğin temeli olan, depolanabilir bir sebzedir.",
+    "harvest": "Eylül",
+    "pests": "Soğan sineği, Mildiyö"
+  },
+  {
+    "name": "Çay",
+    "regions": [
+      "Rize",
+      "Artvin",
+      "Trabzon"
+    ],
+    "soil": "Asidik (pH 4.5-5.5)",
+    "fertilizer": "Amonyum sülfat",
+    "watering": "Çok yüksek doğal yağış",
+    "sun": "Yarı gölge / Bulutlu",
+    "description": "Türkiye'de sadece Doğu Karadeniz'de yetişen milli içeceğimizdir.",
+    "harvest": "Mayıs-Ekim (3-4 sürgün)",
+    "pests": "Kırmızı örümcek"
+  },
+  {
+    "name": "Ebegümeci",
+    "regions": [
+      "Ege"
+    ],
+    "soil": "Doğal",
+    "fertilizer": "Yok",
+    "watering": "Yok",
+    "sun": "Tam güneş",
+    "description": "Doğada kendiliğinden yetişen yenilebilir ot.",
+    "harvest": "Bahar",
+    "pests": "Pas"
+  },
+  {
+    "name": "Nar",
+    "regions": [
+      "Antalya",
+      "Muğla",
+      "Mersin"
+    ],
+    "soil": "Toleransı yüksek",
+    "fertilizer": "Potasyum ve Çinko",
+    "watering": "Düzenli (çatlamayı önler)",
+    "sun": "Tam güneş",
+    "description": "Antioksidan deposu, ihracatı yüksek bir meyvedir.",
+    "harvest": "Eylül-Ekim",
+    "pests": "Unlu bit, Akdeniz meyve sineği"
+  },
+  {
+    "name": "Mandalina",
+    "regions": [
+      "İzmir",
+      "Mersin",
+      "Hatay"
+    ],
+    "soil": "Süzek, havalanan",
+    "fertilizer": "Çinko ve Demir",
+    "watering": "Yaz boyu",
+    "sun": "Tam güneş",
+    "description": "Kış aylarının en popüler, kolay soyulan narenciyesidir.",
+    "harvest": "Ekim-Ocak",
+    "pests": "Akdeniz meyve sineği"
+  },
+  {
+    "name": "Portakal",
+    "regions": [
+      "Antalya",
+      "Adana",
+      "Mersin"
+    ],
+    "soil": "Derin, süzek",
+    "fertilizer": "Azot ve Potasyum",
+    "watering": "Yazın düzenli",
+    "sun": "Tam güneş",
+    "description": "Meyve suyu ve taze tüketim için yetiştirilen temel narenciye.",
+    "harvest": "Kasım-Mart",
+    "pests": "Kabuklu bitler"
+  },
+  {
+    "name": "Şeftali",
+    "regions": [
+      "Bursa",
+      "Çanakkale",
+      "İzmir"
+    ],
+    "soil": "Süzek, çabuk ısınan",
+    "fertilizer": "Azot (meyve iriliği)",
+    "watering": "Düzenli",
+    "sun": "Tam güneş",
+    "description": "Bursa şeftalisi meşhurdur; suyu ve reçeli de yapılır.",
+    "harvest": "Yaz ortası",
+    "pests": "Yaprak kıvırcıklığı, Doğu meyve güvesi"
+  },
+  {
+    "name": "Armut",
+    "regions": [
+      "Bursa",
+      "Ankara",
+      "Antalya"
+    ],
+    "soil": "Derin, geçirgen",
+    "fertilizer": "Dengeli NPK",
+    "watering": "Düzenli",
+    "sun": "Tam güneş",
+    "description": "Deveci ve Santa Maria en yaygın çeşitleridir.",
+    "harvest": "Eylül-Ekim",
+    "pests": "Psillid, Ateş yanıklığı"
+  },
+  {
+    "name": "Ayva",
+    "regions": [
+      "Sakarya",
+      "Bursa",
+      "Bilecik"
+    ],
+    "soil": "Sıcak, kumlu-tınlı",
+    "fertilizer": "Organik gübre",
+    "watering": "Yazın",
+    "sun": "Tam güneş",
+    "description": "Reçeli ve tatlısı yapılan kış meyvesidir; Eşme ayvası meşhurdur.",
+    "harvest": "Ekim",
+    "pests": "Monilya, İç kurdu"
+  },
+  {
+    "name": "Nohut",
+    "regions": [
+      "Ankara",
+      "Konya",
+      "Kırşehir"
+    ],
+    "soil": "Kireçli, kır",
+    "fertilizer": "Azot ihtiyacı azdır",
+    "watering": "Kuraklığa dayanıklı",
+    "sun": "Tam güneş",
+    "description": "Kurak alanların vazgeçilmezi, proteince zengin baklagildir.",
+    "harvest": "Temmuz",
+    "pests": "Antraknoz, Yeşilkurt"
+  },
+  {
+    "name": "Mercimek",
+    "regions": [
+      "Şanlıurfa",
+      "Yozgat"
+    ],
+    "soil": "Kireçli, taşlı",
+    "fertilizer": "Fosfor",
+    "watering": "Sulanmaz",
+    "sun": "Tam güneş",
+    "description": "Kırmızı ve yeşil türleri olan, çorbaların vazgeçilmezi.",
+    "harvest": "Mayıs-Haziran",
+    "pests": "Hortumlu böcek"
+  },
+  {
+    "name": "Fasulye",
+    "regions": [
+      "Konya",
+      "Burdur",
+      "Samsun"
+    ],
+    "soil": "Tınlı, humuslu",
+    "fertilizer": "Fosfor",
+    "watering": "Düzenli",
+    "sun": "Tam güneş / Ilıman",
+    "description": "Hem taze hem kuru tüketilen önemli bir protein kaynağıdır.",
+    "harvest": "Yaz-Sonbahar",
+    "pests": "Fasulye adi yaprak yanıklığı"
+  },
+  {
+    "name": "Yer Fıstığı",
+    "regions": [
+      "Osmaniye",
+      "Adana"
+    ],
+    "soil": "Gevşek, hafif, kumlu",
+    "fertilizer": "Kalsiyum",
+    "watering": "Özellikle çiçeklenmede",
+    "sun": "Tam güneş",
+    "description": "Yağ sanayi ve kuruyemiş sektörü için önemlidir; meyvesi toprak altında olgunlaşır.",
+    "harvest": "Eylül-Ekim",
+    "pests": "Kök çürüklüğü"
+  },
+  {
+    "name": "Soya",
+    "regions": [
+      "Adana",
+      "Samsun"
+    ],
+    "soil": "Tınlı, su tutan",
+    "fertilizer": "Bakteri aşısı",
+    "watering": "Düzenli",
+    "sun": "Tam güneş",
+    "description": "Yağ ve yem sanayinin en stratejik ürünüdür.",
+    "harvest": "Eylül",
+    "pests": "Beyaz sinek, Kırmızı örümcek"
+  },
+  {
+    "name": "Kanola",
+    "regions": [
+      "Trakya",
+      "Konya"
+    ],
+    "soil": "Tınlı, humuslu",
+    "fertilizer": "Kükürt",
+    "watering": "Bahar",
+    "sun": "Tam güneş",
+    "description": "Biyodizel ve yağ üretiminde kullanılan sarı çiçekli bitki.",
+    "harvest": "Haziran",
+    "pests": "Sap hortumlu böceği"
+  },
+  {
+    "name": "Tütün",
+    "regions": [
+      "Manisa",
+      "Denizli",
+      "Adıyaman"
+    ],
+    "soil": "Kıraç, süzek, eğimli",
+    "fertilizer": "Azot çok az verilmeli",
+    "watering": "Genelde sulanmaz",
+    "sun": "Tam güneş",
+    "description": "Türkiye şark tütünü üretiminde dünyada söz sahibidir.",
+    "harvest": "Yaz (El kırma)",
+    "pests": "Mavi küf, Trips"
+  },
+  {
+    "name": "Çeltik",
+    "regions": [
+      "Edirne",
+      "Samsun",
+      "Gönen"
+    ],
+    "soil": "Su tutan, killi",
+    "fertilizer": "Amonyum sülfat",
+    "watering": "Tava sulama (Göllendirme)",
+    "sun": "Tam güneş",
+    "description": "Pirinç sofraların temel taşlarından biridir; bol su ister.",
+    "harvest": "Eylül",
+    "pests": "Yanıklık hastalığı"
+  },
+  {
+    "name": "Yulaf",
+    "regions": [
+      "Marmara",
+      "İç Anadolu"
+    ],
+    "soil": "Toleransı yüksek",
+    "fertilizer": "Azot",
+    "watering": "Serin iklim sever",
+    "sun": "Tam güneş",
+    "description": "Bisküvi sanayi ve hayvan yemi (at yemi) için yetiştirilir.",
+    "harvest": "Haziran",
+    "pests": "Pas"
+  },
+  {
+    "name": "Ahududu",
+    "regions": [
+      "Bursa"
+    ],
+    "soil": "Organik asidik",
+    "fertilizer": "Potasyum",
+    "watering": "Düzenli",
+    "sun": "Yarı gölge",
+    "description": "Böğürtlene benzeyen, kırmızı renkli ve aromatik bir orman meyvesidir.",
+    "harvest": "Yaz-Sonbahar",
+    "pests": "Kurşuni küf"
+  },
+  {
+    "name": "Böğürtlen",
+    "regions": [
+      "Bursa",
+      "Muğla"
+    ],
+    "soil": "Asidik, nemli",
+    "fertilizer": "Azot",
+    "watering": "Düzenli",
+    "sun": "Yarı gölge",
+    "description": "Reçel ve meyve suyu yapımında kullanılır.",
+    "harvest": "Yaz",
+    "pests": "Pas"
+  },
+  {
+    "name": "Yaban Mersini",
+    "regions": [
+      "Rize",
+      "Trabzon",
+      "Bursa"
+    ],
+    "soil": "Çok asidik (pH 4.5)",
+    "fertilizer": "Amonyum sülfat",
+    "watering": "Nemli",
+    "sun": "Yarı gölge",
+    "description": "Antioksidan değeri çok yüksek, getirisi iyi bir meyvedir.",
+    "harvest": "Yaz",
+    "pests": "Kuşlar (Meyve için)"
+  },
+  {
+    "name": "Zencefil",
+    "regions": [
+      "Antalya",
+      "Mersin (Sera)"
+    ],
+    "soil": "Humuslu, gevşek",
+    "fertilizer": "Organik",
+    "watering": "Nemli",
+    "sun": "Gölge",
+    "description": "Tropik bir kök bitkisi olup, Türkiye'de yeni yeni denenmektedir.",
+    "harvest": "Kış",
+    "pests": "Nematod"
+  },
+  {
+    "name": "Zerdeçal",
+    "regions": [
+      "Mersin (Sera)"
+    ],
+    "soil": "Süzek",
+    "fertilizer": "Potasyum",
+    "watering": "Sık",
+    "sun": "Gölge",
+    "description": "Hint safranı olarak da bilinir, tıbbi ve baharat değeri çok yüksektir.",
+    "harvest": "Kış",
+    "pests": "Nematod"
+  },
+  {
+    "name": "Pitaya (Ejder)",
+    "regions": [
+      "Mersin",
+      "Antalya"
+    ],
+    "soil": "Kumlu, süzek",
+    "fertilizer": "Organik",
+    "watering": "Az",
+    "sun": "Yarı gölge",
+    "description": "Kaktüs ailesinden, ihracat değeri yüksek egzotik bir meyvedir.",
+    "harvest": "Yaz-Sonbahar",
+    "pests": "Salyangoz"
+  },
+  {
+    "name": "Keçiboynuzu",
+    "regions": [
+      "Antalya",
+      "Mersin"
+    ],
+    "soil": "Kireçli, taşlı",
+    "fertilizer": "Yok",
+    "watering": "Doğal",
+    "sun": "Tam güneş",
+    "description": "Harnup olarak bilinir, pekmezi çok değerlidir.",
+    "harvest": "Ağustos-Eylül",
+    "pests": "Güve"
+  },
+  {
+    "name": "Kabak",
+    "regions": [
+      "Tüm Türkiye"
+    ],
+    "soil": "Humuslu",
+    "fertilizer": "Azot",
+    "watering": "Sık",
+    "sun": "Tam güneş",
+    "description": "Sakız kabağı, bal kabağı gibi türleri vardır.",
+    "harvest": "Yaz-Sonbahar",
+    "pests": "Külleme (Beyaz toz)"
+  },
+  {
+    "name": "Ispanak",
+    "regions": [
+      "Ege",
+      "Marmara"
+    ],
+    "soil": "Azotlu",
+    "fertilizer": "Azot",
+    "watering": "Düzenli",
+    "sun": "Serin / Yarı gölge",
+    "description": "Demir deposu kış sebzesidir.",
+    "harvest": "Sonbahar-Kış-Bahar",
+    "pests": "Mildiyö"
+  },
+  {
+    "name": "Pırasa",
+    "regions": [
+      "Bursa",
+      "Ege"
+    ],
+    "soil": "Killi",
+    "fertilizer": "Azot",
+    "watering": "Sık",
+    "sun": "Serin",
+    "description": "Zeytinyağlı yemeklerin vazgeçilmezi kış sebzesidir.",
+    "harvest": "Kış",
+    "pests": "Pas, Trips"
+  },
+  {
+    "name": "Lahana",
+    "regions": [
+      "Samsun",
+      "Niğde"
+    ],
+    "soil": "Killi, ağır",
+    "fertilizer": "Kükürt ve Azot",
+    "watering": "Bol su",
+    "sun": "Serin",
+    "description": "Sarmalık, turşuluk ve kapuska olarak tüketilir.",
+    "harvest": "Sonbahar-Kış",
+    "pests": "Lahana kelebeği"
+  },
+  {
+    "name": "Karnabahar",
+    "regions": [
+      "Samsun"
+    ],
+    "soil": "Killi",
+    "fertilizer": "Azot",
+    "watering": "Sık",
+    "sun": "Tam güneş",
+    "description": "Kışlık, çiçekleri yenen bir sebzedir.",
+    "harvest": "Kış",
+    "pests": "Lahana kelebeği"
+  },
+  {
+    "name": "Brokoli",
+    "regions": [
+      "İzmir",
+      "Samsun"
+    ],
+    "soil": "Killi-tınlı",
+    "fertilizer": "Azot",
+    "watering": "Sık",
+    "sun": "Tam güneş",
+    "description": "Besin değeri yüksek, yeşil renkli kış sebzesidir.",
+    "harvest": "Kış",
+    "pests": "Mildiyö"
+  },
+  {
+    "name": "Enginar",
+    "regions": [
+      "İzmir",
+      "Aydın"
+    ],
+    "soil": "Derin tınlı",
+    "fertilizer": "Azot",
+    "watering": "Bol su",
+    "sun": "Tam güneş",
+    "description": "Karaciğer dostu olarak bilinen Ege sebzesidir.",
+    "harvest": "Bahar (Mart-Mayıs)",
+    "pests": "Yaprak biti, Salyangoz"
+  },
+  {
+    "name": "Bamya",
+    "regions": [
+      "Amasya",
+      "Balıkesir"
+    ],
+    "soil": "Tınlı, sıcak",
+    "fertilizer": "Azot",
+    "watering": "Düzenli",
+    "sun": "Tam güneş",
+    "description": "Sıcak iklim sebzesidir, çiçekleri güzeldir.",
+    "harvest": "Yaz",
+    "pests": "Külleme"
+  },
+  {
+    "name": "Kereviz",
+    "regions": [
+      "Sakarya"
+    ],
+    "soil": "Tuzlu, ağır",
+    "fertilizer": "Tuz isteği vardır",
+    "watering": "Çok",
+    "sun": "Tam güneş",
+    "description": "Kök ve sap kerevizi olarak ikiye ayrılır.",
+    "harvest": "Kış",
+    "pests": "Yaprak lekesi"
   }
 ]
-
-
-
-
-
-

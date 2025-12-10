@@ -35,8 +35,8 @@ export default function TurkeyMap({ className, interactive = true }: TurkeyMapPr
   }
 
   return (
-    <div className={`w-full bg-white/50 backdrop-blur-sm rounded-xl overflow-hidden border border-zinc-200 cursor-pointer shadow-sm ${className || "h-[85vh]"}`}>
-      <MapContainer center={center} zoom={5.6} scrollWheelZoom={false} zoomControl={false} style={{ height: "100%", width: "100%", background: "transparent" }}>
+    <div className={`w-full bg-transparent rounded-xl overflow-hidden cursor-pointer outline-none focus:outline-none ${className || "h-[85vh]"}`}>
+      <MapContainer center={center} zoom={6.2} scrollWheelZoom={false} zoomControl={false} style={{ height: "100%", width: "100%", background: "transparent" }}>
         {data && (
           <GeoJSON
             data={data}
@@ -45,6 +45,7 @@ export default function TurkeyMap({ className, interactive = true }: TurkeyMapPr
               weight: 0.8,
               fillColor: "#F5F5DC", // bej dolgu
               fillOpacity: 0.6,
+              className: "province-path" // Enable CSS transforms
             })}
             onEachFeature={(feature: any, layer: any) => {
               layer.on({
@@ -59,15 +60,28 @@ export default function TurkeyMap({ className, interactive = true }: TurkeyMapPr
                 },
                 mouseover: (e: L.LeafletMouseEvent) => {
                   const layer = e.target;
+                  layer.bringToFront(); // Necessary for z-index
+
+                  // Use CSS for the actual "Growth" / Scale effect
+                  if (layer.getElement()) {
+                    layer.getElement().classList.add('province-hover');
+                  }
+
+                  // Only slight style adjustment, NO color change
                   layer.setStyle({
-                    fillOpacity: 0.9,
+                    fillOpacity: 1,
                     weight: 2,
-                    color: "#2E7D32"
+                    color: "#4CAF50" // Keep original green
                   });
                   layer.openTooltip();
                 },
                 mouseout: (e: L.LeafletMouseEvent) => {
                   const layer = e.target;
+
+                  if (layer.getElement()) {
+                    layer.getElement().classList.remove('province-hover');
+                  }
+
                   layer.setStyle({
                     fillOpacity: 0.6,
                     weight: 0.8,

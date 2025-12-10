@@ -19,7 +19,7 @@ export default function LoginPage() {
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
-    const res = await signIn("credentials", { redirect: false, email, password });
+    const res = await signIn("credentials", { redirect: false, email: email.trim(), password });
     if (res?.ok) {
       router.push("/ana");
     } else {
@@ -59,7 +59,7 @@ export default function LoginPage() {
       )}
 
       <form onSubmit={onSubmit} className="flex flex-col gap-3">
-        <input className="border p-2 rounded" placeholder="E-posta" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input className="border p-2 rounded" placeholder="E-posta" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <input className="border p-2 rounded" placeholder="Şifre" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         {error && <p className="text-red-600 text-sm">{error}</p>}
         <div className="flex justify-end">
@@ -67,7 +67,16 @@ export default function LoginPage() {
             Şifremi unuttum
           </Link>
         </div>
-        <button className="px-4 py-2 bg-primary text-white rounded btn-led" type="submit">Giriş yap</button>
+        <button
+          className={`px-4 py-2 rounded btn-led transition-colors ${!email || !password
+            ? "bg-zinc-300 text-zinc-500 cursor-not-allowed"
+            : "bg-primary text-white"
+            }`}
+          type="submit"
+          disabled={!email || !password}
+        >
+          Giriş yap
+        </button>
       </form>
 
       {/* Register Link */}

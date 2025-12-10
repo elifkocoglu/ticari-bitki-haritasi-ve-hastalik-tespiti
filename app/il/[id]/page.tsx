@@ -58,7 +58,7 @@ export default async function ProvincePage({ params }: PageProps) {
     }
 
     return (
-        <div className="min-h-screen bg-cream">
+        <div className="min-h-screen bg-transparent">
             <div className="max-w-6xl mx-auto px-4 py-8">
                 <div className="mb-6 flex items-center gap-2 text-sm text-zinc-500">
                     <Link href="/ana" className="hover:text-primary">Ana Sayfa</Link>

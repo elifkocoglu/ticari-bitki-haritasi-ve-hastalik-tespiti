@@ -34,84 +34,172 @@ export default function TaniPage() {
   }
 
   return (
-    <div className="min-h-screen w-full">
-      <div className="w-full max-w-full px-4 py-8">
-        {/* Back Button */}
-        <Link href="/ana" className="inline-flex items-center text-zinc-500 hover:text-primary mb-8 transition-colors group">
-          <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-          Panele Dön
-        </Link>
+    <div className="min-h-screen w-full relative">
+      {/* Background Decorative Elements */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-30"></div>
+      </div>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-zinc-100 p-8">
-          <h1 className="text-3xl font-bold text-zinc-800 mb-2">Bitki Tanı ve Analiz</h1>
-          <p className="text-zinc-500 mb-8">Bitkinizin fotoğrafını yükleyerek yapay zeka destekli hastalık teşhisi ve bakım önerileri alın.</p>
+      <div className="w-full max-w-5xl mx-auto px-4 py-8">
+        {/* Header Section */}
+        <div className="flex items-center justify-between mb-8">
+          <Link href="/ana" className="inline-flex items-center text-zinc-500 hover:text-primary transition-colors group px-4 py-2 bg-white/50 backdrop-blur-sm rounded-lg hover:bg-white border border-transparent hover:border-zinc-200">
+            <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            <span className="font-medium">Panele Dön</span>
+          </Link>
+          <div className="text-right hidden sm:block">
+            {/* <h2 className="text-sm font-semibold text-zinc-400 uppercase tracking-widest">Yapay Zeka Destekli</h2> */}
+          </div>
+        </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
-            <label className="block w-full">
-              <span className="sr-only">Fotoğraf seç</span>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={(e) => setFile(e.target.files?.[0] || null)}
-                className="block w-full text-sm text-zinc-500
-                  file:mr-4 file:py-2.5 file:px-4
-                  file:rounded-full file:border-0
-                  file:text-sm file:font-semibold
-                  file:bg-primary/10 file:text-primary
-                  hover:file:bg-primary/20
-                  cursor-pointer"
-              />
-            </label>
-            <button
-              className="w-full sm:w-auto px-6 py-2.5 bg-primary text-white rounded-full font-medium hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed transition-colors whitespace-nowrap shadow-sm hover:shadow"
-              onClick={onUpload}
-              disabled={!file || loading}
-            >
-              {loading ? "Analiz ediliyor..." : "Yükle ve Tanı"}
-            </button>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Main Card */}
+          <div className="lg:col-span-12">
+            <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-white/50 overflow-hidden">
+              <div className="p-8 sm:p-12 text-center border-b border-zinc-100">
+                <h1 className="text-4xl sm:text-5xl font-bold text-zinc-800 mb-4 tracking-tight">
+                  Bitki <span className="text-primary">Tanı & Analiz</span>
+                </h1>
+                <p className="text-zinc-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                  Bitkinizin fotoğrafını yükleyin, gelişmiş yapay zeka modelimiz hastalığı teşhis etsin ve size özel tedavi yöntemleri önersin.
+                </p>
+              </div>
+
+              <div className="p-8 sm:p-12 bg-zinc-50/50">
+                {/* Upload Section */}
+                <div className="max-w-xl mx-auto">
+                  <label className={`
+                    relative group flex flex-col items-center justify-center w-full h-48 sm:h-64 
+                    rounded-3xl border-3 border-dashed transition-all duration-300 cursor-pointer overflow-hidden
+                    ${file ? 'border-primary bg-primary/5' : 'border-zinc-300 hover:border-primary/50 hover:bg-zinc-50'}
+                  `}>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => setFile(e.target.files?.[0] || null)}
+                      className="hidden"
+                    />
+
+                    {file ? (
+                      <div className="text-center z-10">
+                        <div className="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
+                          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                        </div>
+                        <p className="text-lg font-semibold text-zinc-800">{file.name}</p>
+                        <p className="text-sm text-zinc-500 mt-1">Fotoğraf seçildi, analize hazır</p>
+                      </div>
+                    ) : (
+                      <div className="text-center z-10 p-6">
+                        <div className="w-16 h-16 bg-zinc-100 text-zinc-400 group-hover:text-primary group-hover:bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
+                          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
+                        </div>
+                        <p className="text-lg font-semibold text-zinc-700 group-hover:text-zinc-900">Fotoğraf Yüklemek İçin Tıklayın</p>
+                        <p className="text-sm text-zinc-500 mt-2">veya fotoğrafı sürükleyip bırakın</p>
+                      </div>
+                    )}
+                  </label>
+
+                  <div className="mt-8 flex justify-center">
+                    <button
+                      className={`
+                        w-full sm:w-auto px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300
+                        flex items-center justify-center gap-3
+                        ${!file || loading
+                          ? "bg-zinc-200 text-zinc-400 cursor-not-allowed shadow-none"
+                          : "bg-gradient-to-r from-primary to-green-600 text-white shadow-primary/30"
+                        }
+                      `}
+                      onClick={onUpload}
+                      disabled={!file || loading}
+                    >
+                      {loading ? (
+                        <>
+                          <svg className="animate-spin h-5 w-5 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Analiz Ediliyor...
+                        </>
+                      ) : (
+                        <>
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                          Analizi Başlat
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {loading && (
-            <div className="text-center py-12">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-              <p className="text-zinc-500 animate-pulse">Yapay zeka bitkiyi inceliyor...</p>
-            </div>
-          )}
-
+          {/* Result Section */}
           {result && (
-            <div className="mt-8 border border-zinc-100 rounded-xl p-6 bg-zinc-50/50">
-              <h2 className="text-2xl font-bold text-primary mb-4 flex items-center gap-2">
-                <span className="w-2 h-8 bg-primary rounded-full"></span>
-                {result.name}
-              </h2>
-
-              <div className="space-y-4">
-                {result.disease && (
-                  <div className="p-4 bg-red-50 rounded-xl border border-red-100">
-                    <span className="font-bold text-red-700 block mb-1 flex items-center gap-2">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-                      Tespit Edilen Durum
-                    </span>
-                    <span className="text-red-900/80 leading-relaxed">{result.disease}</span>
+            <div className="lg:col-span-12 animate-in fade-in slide-in-from-bottom-10 duration-700">
+              <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white overflow-hidden">
+                {/* Result Header */}
+                <div className="bg-gradient-to-r from-zinc-900 to-zinc-800 p-8 sm:p-10 text-white relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-32 bg-primary blur-[100px] opacity-20 rounded-full"></div>
+                  <div className="relative z-10">
+                    <p className="text-zinc-400 text-sm font-medium uppercase tracking-wider mb-2">Analiz Sonucu</p>
+                    <h2 className="text-3xl sm:text-4xl font-bold flex items-center gap-3">
+                      {result.name}
+                      <span className="px-3 py-1 bg-primary text-white text-xs rounded-full font-bold tracking-wide uppercase shadow-lg shadow-primary/20">Tespit Edildi</span>
+                    </h2>
                   </div>
-                )}
+                </div>
 
-                {result.treatment && (
-                  <div className="p-4 bg-green-50 rounded-xl border border-green-100">
-                    <span className="font-bold text-green-700 block mb-1 flex items-center gap-2">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                      Öneri ve Tedavi
-                    </span>
-                    <span className="text-green-900/80 leading-relaxed">{result.treatment}</span>
-                  </div>
-                )}
+                <div className="p-8 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Diagnosis Card */}
+                  {result.disease && (
+                    <div className="bg-red-50/50 rounded-2xl p-6 border border-red-100 hover:shadow-lg hover:border-red-200 transition-all duration-300">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-zinc-900 mb-2">Tespit Edilen Durum</h3>
+                          <p className="text-zinc-700 leading-relaxed">{result.disease}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
-                {result.notes && (
-                  <div className="p-4 bg-white rounded-xl border border-zinc-100">
-                    <span className="font-bold text-zinc-800 block mb-1">Notlar</span>
-                    <span className="text-zinc-600 leading-relaxed">{result.notes}</span>
-                  </div>
-                )}
+                  {/* Notes Card */}
+                  {result.notes && (
+                    <div className="bg-blue-50/50 rounded-2xl p-6 border border-blue-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-zinc-900 mb-2">Model Notları</h3>
+                          <p className="text-zinc-700 leading-relaxed text-sm">{result.notes}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Treatment Card (Full Width) */}
+                  {result.treatment && (
+                    <div className="md:col-span-2 bg-green-50/50 rounded-2xl p-8 border border-green-100 hover:shadow-lg hover:border-green-200 transition-all duration-300">
+                      <div className="flex flex-col sm:flex-row items-start gap-6">
+                        <div className="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm">
+                          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <div className="w-full">
+                          <h3 className="text-2xl font-bold text-zinc-900 mb-3">Tedavi ve Bakım Önerileri</h3>
+                          <div className="prose prose-green max-w-none text-zinc-700 leading-relaxed">
+                            {result.treatment}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           )}

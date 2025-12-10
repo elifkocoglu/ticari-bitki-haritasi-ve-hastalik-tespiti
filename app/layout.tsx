@@ -26,7 +26,9 @@ export default function RootLayout({
       <body className="antialiased">
         <Providers>
           <BackgroundController />
-          {children}
+          <div className="relative z-10">
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

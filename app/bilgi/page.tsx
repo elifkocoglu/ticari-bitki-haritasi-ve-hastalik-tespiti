@@ -1,6 +1,7 @@
 import { readFile } from "fs/promises";
 import path from "path";
 import Link from "next/link";
+import BilgiDashboard from "../components/BilgiDashboard";
 
 export default async function KnowledgeIndex() {
   const dataPath = path.join(process.cwd(), "data", "plants.json");
@@ -13,32 +14,21 @@ export default async function KnowledgeIndex() {
   }
 
   return (
-    <div className="min-h-screen w-full">
-      <div className="w-full max-w-full px-4 py-8">
-        {/* Back Button */}
-        <Link href="/ana" className="inline-flex items-center text-zinc-500 hover:text-primary mb-8 transition-colors group">
-          <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-          Panele Dön
-        </Link>
+    <div className="min-h-screen w-full bg-zinc-50/50">
+      <div className="w-full max-w-7xl mx-auto px-4 py-8">
+        {/* Header & Back Button */}
+        <div className="mb-8">
+          <Link href="/ana" className="inline-flex items-center text-zinc-500 hover:text-primary mb-6 transition-colors group px-4 py-2 bg-white rounded-lg border border-zinc-100 shadow-sm hover:shadow">
+            <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+            Panele Dön
+          </Link>
 
-        <h1 className="text-3xl font-bold text-primary mb-2">Bitki Bilgi Rehberi</h1>
-        <p className="text-zinc-500 mb-8">Türkiye'de yetişen önemli ticari bitkiler hakkında detaylı bilgiler.</p>
+          <h1 className="text-4xl font-bold text-zinc-800 mb-2 tracking-tight">Tarımsal <span className="text-primary">Bilgi Merkezi</span></h1>
+          <p className="text-zinc-500 text-lg max-w-2xl">Türkiye'nin tarımsal üretim verileri, canlı hal fiyatları ve bitki yetiştiriciliği hakkında kapsamlı rehber.</p>
+        </div>
 
-        <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {plants.map((p) => (
-            <li key={p.name} className="group bg-white border border-zinc-100 rounded-xl p-6 hover:shadow-md transition-all">
-              <div className="flex items-center justify-between">
-                <span className="font-medium text-zinc-800 group-hover:text-primary transition-colors">{p.name}</span>
-                <Link
-                  className="text-sm font-medium text-green-700 bg-green-50 px-4 py-2 rounded-lg hover:bg-green-600 hover:text-white transition-colors shadow-sm"
-                  href={`/bilgi/${encodeURIComponent(p.name)}`}
-                >
-                  Detay
-                </Link>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {/* Dashboard Component */}
+        <BilgiDashboard initialPlants={plants} />
       </div>
     </div>
   );
